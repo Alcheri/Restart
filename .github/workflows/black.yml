@@ -1,6 +1,9 @@
 name: Lint
 
 on: [push, pull_request]
+permissions:
+    checks: read
+    issues: write
 jobs:
   linter_name:
     name: runner / black
