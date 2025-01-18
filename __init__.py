@@ -36,13 +36,14 @@ import supybot
 import supybot.world as world
 
 __version__ = ""
-__author__ = supybot.Author('James Lu', 'GLolol', 'james@overdrivenetworks.com')
+__author__ = supybot.Author("James Lu", "GLolol", "james@overdrivenetworks.com")
 __contributors__ = {}
-__url__ = 'https://github.com/GLolol/SupyPlugins/'
+__url__ = "https://github.com/GLolol/SupyPlugins/"
 
 from . import config
 from . import plugin
 from imp import reload
+
 # In case we're being reloaded.
 reload(config)
 reload(plugin)
