@@ -32,7 +32,7 @@ from supybot.test import *
 
 
 class RestartTestCase(PluginTestCase):
-    plugins = ("Restart",)
+    plugins = ('Restart',)
 
 
 # vim:set shiftwidth=4 tabstop=4 expandtab textwidth=79:

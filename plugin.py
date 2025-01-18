@@ -34,11 +34,9 @@ from supybot.commands import *
 import supybot.plugins as plugins
 import supybot.ircutils as ircutils
 import supybot.callbacks as callbacks
-
 try:
     from supybot.i18n import PluginInternationalization
-
-    _ = PluginInternationalization("Restart")
+    _ = PluginInternationalization('Restart')
 except ImportError:
     # Placeholder that allows to run the plugin on a bot
     # without the i18n module
@@ -49,7 +47,6 @@ import os
 import sys
 import time
 
-
 class Restart(callbacks.Plugin):
     """Restart plugin: provides a command to restart Limnoria from IRC."""
 
@@ -59,7 +56,7 @@ class Restart(callbacks.Plugin):
         # args.
         os.execl(sys.executable, os.path.basename(sys.executable), *sys.argv)
 
-    @wrap(["owner", additional("text")])
+    @wrap(['owner', additional('text')])
     def restart(self, irc, msg, args, text):
         """[<text>]
 
@@ -72,10 +69,9 @@ class Restart(callbacks.Plugin):
             irc.error("Not supported on daemonized instances.", Raise=True)
 
         atexit.register(self.restart_atexit_hook)
-        self.log.info("Restart: Attempting to restart Limnoria.")
+        self.log.info('Restart: Attempting to restart Limnoria.')
         # Reuse the 'quit' command of the Owner plugin.
-        irc.getCallback("Owner").quit(irc, msg, [text or ""])
-
+        irc.getCallback('Owner').quit(irc, msg, [text or ''])
 
 Class = Restart
 
